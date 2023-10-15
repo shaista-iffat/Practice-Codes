@@ -1,0 +1,59 @@
+#calculator
+
+A = "add"
+S = "subtract"
+M = "multiply"
+D = "divide"
+
+print("Welcome to the calculator")
+print("A = add")
+print("S = subtract")
+print("M = multiply")
+print("D = divide")
+
+choice = input("What would you like to do? (A, S, M, D): ")
+if choice == "A":
+  new_num = input("Would you like to add a new number? (Y/N): ")
+  num_str = []
+  while new_num != "N":
+    amount = int(input("Please enter the number: "))
+    num_str.append(amount)
+    new_num = input("Would you like to add a new number? (Y/N): ")
+  print(sum(num_str))
+
+if choice == "S":
+  num_1 = int(input("Enter the number you would like to subtract from: "))
+  num_2 = int(input("Enter how much you would like to subtract: "))
+  sub_num = num_1-num_2
+  print(sub_num)
+
+if choice == "M":
+      
+  mul_choice = input("Multiply a list of numbers(L) / enter 2 numbers(I)? Enter: ")
+  if mul_choice == "L":
+    num_list = []
+    new_num = input("Would you like to add a new number? (Y/N): ")
+    while new_num != "N":
+      amount = int(input("Please enter the number: "))
+      num_list.append(amount)
+      new_num = input("Would you like to add a new number? (Y/N): ")
+    
+    def multiplyList(myList):
+      #mutiply each element one by one
+      result = 1
+      for next_item in num_list:
+        result = result * next_item
+      return result
+    print(multiplyList(num_list))
+
+  if mul_choice == "I":
+    num_1 = int(input("Enter the number: "))
+    num_2 = int(input("Enter the number: "))
+    mul_nums = num_1*num_2
+    print(mul_nums)
+
+if choice == "D":
+  num_1 = float(input("Enter the number you would like to divide from: "))
+  num_2 = float(input("Enter the divisor: "))
+  div_num = num_1/num_2
+  print(div_num)
